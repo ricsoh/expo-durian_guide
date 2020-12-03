@@ -1,10 +1,21 @@
 import * as React from "react";
 import { Text, View } from "react-native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-export default function EventsScreen() {
+function EventsHomeScreen() {
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>Events!</Text>
+            <Text>Events First Page!</Text>
         </View>
     );
+  }
+
+  const Stack = createStackNavigator();
+
+  export default function EventsStack() {
+      return (
+          <Stack.Navigator>
+              <Stack.Screen name="EventsHome" component={EventsHomeScreen} />
+          </Stack.Navigator>
+      );
   }
