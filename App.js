@@ -33,9 +33,9 @@ export default function App() {
           inactiveTintColor: 'gray',
         }}
       >
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Events" component={EventsScreen} />
-        <Tab.Screen name="Contact" component={ContactScreen} />
+        <Tab.Screen name='Home' component={HomeScreen} />
+        <Tab.Screen name='Events' component={EventsScreen} />
+        <Tab.Screen name='Contact' component={ContactScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
