@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from "./screens/HomeScreen";
-import EventsScreen from "./screens/EventsScreen";
-import ContactScreen from "./screens/ContactScreen";
-import { FontAwesome } from '@expo/vector-icons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import HomeScreen from './screens/HomeScreen';
+import EventsScreen from './screens/EventsScreen';
+import ContactScreen from './screens/ContactScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -26,7 +25,6 @@ export default function App() {
               iconName = focused ? 'ios-contact' : 'ios-contact';
             }
 
-            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
