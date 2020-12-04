@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
 import EventsScreen from './screens/EventsScreen';
-import ContactScreen from './screens/ContactScreen';
+import ContactsScreen from './screens/ContactsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,21 +21,22 @@ export default function App() {
               iconName = focused ? 'ios-home' : 'ios-home';
             } else if (route.name === 'Events') {
               iconName = focused ? 'ios-list-box' : 'ios-list';
-            } else if (route.name === 'Contact') {
+            } else if (route.name === 'Contacts') {
               iconName = focused ? 'ios-contact' : 'ios-contact';
             }
 
+            // You can return any component that you like here!
             return <Ionicons name={iconName} size={size} color={color} />;
           },
         })}
         tabBarOptions={{
           activeTintColor: 'blue',
-          inactiveTintColor: 'gray',
+          inactiveTintColor: 'lightgray',
         }}
       >
         <Tab.Screen name='Home' component={HomeScreen} />
         <Tab.Screen name='Events' component={EventsScreen} />
-        <Tab.Screen name='Contact' component={ContactScreen} />
+        <Tab.Screen name='Contacts' component={ContactsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
