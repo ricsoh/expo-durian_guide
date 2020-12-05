@@ -4,8 +4,8 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
-import EventsScreen from './screens/EventsScreen';
-import ContactsScreen from './screens/ContactsScreen';
+import TypesScreen from './screens/TypesScreen';
+import StallsScreen from './screens/StallsScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,9 +19,9 @@ export default function App() {
 
             if (route.name === 'Home') {
               iconName = focused ? 'ios-home' : 'ios-home';
-            } else if (route.name === 'Events') {
-              iconName = focused ? 'ios-list-box' : 'ios-list';
-            } else if (route.name === 'Contacts') {
+            } else if (route.name === 'Durian Type') {
+              iconName = focused ? 'ios-list' : 'ios-list';
+            } else if (route.name === 'Stalls') {
               iconName = focused ? 'ios-contact' : 'ios-contact';
             }
 
@@ -35,8 +35,8 @@ export default function App() {
         }}
       >
         <Tab.Screen name='Home' component={HomeScreen} />
-        <Tab.Screen name='Events' component={EventsScreen} />
-        <Tab.Screen name='Contacts' component={ContactsScreen} />
+        <Tab.Screen name='Durian Type' component={TypesScreen} />
+        <Tab.Screen name='Stalls' component={StallsScreen} />
       </Tab.Navigator>
     </NavigationContainer>
   );
