@@ -59,6 +59,10 @@ function TypesHomeScreen({ navigation }) {
           </Body>
         </CardItem>
       </Card>
+      <Button
+        onPress={() => navigation.navigate("TypesSecond")}
+        title="Next type"
+      ></Button>
     </View>
   );
 }
@@ -84,6 +88,10 @@ function TypesSecondScreen({ navigation }) {
           </Body>
         </CardItem>
       </Card>
+      <Button
+        onPress={() => navigation.navigate("TypesThird")}
+        title="Next type"
+      ></Button>
     </View>
   );
 }
@@ -109,6 +117,10 @@ function TypesThirdScreen({ navigation }) {
           </Body>
         </CardItem>
       </Card>
+      <Button
+        onPress={() => navigation.navigate("TypesForth")}
+        title="Next type"
+      ></Button>
     </View>
   );
 }
@@ -132,47 +144,23 @@ function TypesForthScreen({ navigation }) {
           </Body>
         </CardItem>
       </Card>
+      <Button
+        onPress={() => navigation.popToTop()}
+        title="Back to top"
+      ></Button>
     </View>
   );
 }
 
 const Stack = createStackNavigator();
 
-export default function EventsStack({ navigation }) {
+export default function EventsStack() {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="TypesHome" component={TypesHomeScreen} options={{
-          headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesSecond")}
-              title="Next Type"
-            />
-          ),
-        }}/>
-      <Stack.Screen name="TypesSecond" component={TypesSecondScreen} options={{
-          headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesThird")}
-              title="Next Type"
-            />
-          ),
-        }}/>
-      <Stack.Screen name="TypesThird" component={TypesThirdScreen} options={{
-          headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesForth")}
-              title="Next Type"
-            />
-          ),
-        }}/>
-      <Stack.Screen name="TypesForth" component={TypesForthScreen} options={{
-          headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesHome")}
-              title="Back to Top"
-            />
-          ),
-        }}/>
+      <Stack.Screen name="TypesHome" component={TypesHomeScreen} />
+      <Stack.Screen name="TypesSecond" component={TypesSecondScreen} />
+      <Stack.Screen name="TypesThird" component={TypesThirdScreen} />
+      <Stack.Screen name="TypesForth" component={TypesForthScreen} />
     </Stack.Navigator>
   );
 }
