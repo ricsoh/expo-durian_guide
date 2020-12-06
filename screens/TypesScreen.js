@@ -6,7 +6,7 @@ import { Card, CardItem, Body } from "native-base";
 const typesData = [
   {
     name: "Mao Shan Wang (aka Butter durian, Cat Mountain King, Rajah Kunyit)",
-    placeOrigin: "Place of origin: Kelatan, Pahang and Johor",
+    placeOrigin: "Kelatan, Pahang and Johor.",
     description:
       "Probably the most popular type of durian among Singaporeans besides the D24. Rich in taste and colour, Mao Shan Wang durians boast a creamy texture and leave a strong bittersweet taste in your mouth. To distinguish them, look out for the pyramid-shapes thorns at the base of the stem. They also have a unique starfish-shaped pattern found at the base of the durian fruit.",
     pic:
@@ -14,7 +14,7 @@ const typesData = [
   },
   {
     name: "D24 (aka Sultan)",
-    placeOrigin: "Place of origin: Johor, Pahang and Cameron Highlands",
+    placeOrigin: "Johor, Pahang and Cameron Highlands.",
     description:
       "Before the Mao Shan Wang breed surged in popularity, the most famous breed back in the ’90s was the D24 durians. D24 durians are a little less overwhelming in flavour and are known for their creamy texture and subtle bittersweet after-taste. If you’re not that familiar with durians, this is a good introduction to the king of fruits. The stem of the durian is shorter compared to other durians and it has a brown-coloured ring around the bottom of the stem.",
     pic:
@@ -22,7 +22,7 @@ const typesData = [
   },
   {
     name: "Golden Phoenix (aka Jin Feng)",
-    placeOrigin: "Place of origin: Pahang and Johor",
+    placeOrigin: "Pahang and Johor.",
     description:
       "Despite being one of the smallest durians (it can be as small as a mango), this breed actually brings something new to the table with its strong pungent smell. It’s known for its bitter taste, watery texture and pale yellow-white colour that’s often mistaken for being rotten. To identify it, the shell of the durian has sharp needle-like thorns, while the fruit is roundish and oval in shape.",
     pic:
@@ -30,105 +30,72 @@ const typesData = [
   },
   {
     name: "XO",
-    placeOrigin: "Place of origin: Johor, Genting and Cameron Highlands",
+    placeOrigin: "Johor, Genting and Cameron Highlands.",
     description:
       "If you like your durian intense and bitter, the XO durian is right up your alley. It has a pale yellow flesh that’s slightly watery. Its alcoholic name derives from the fact that the breed is cultivated through an extended period of fermentation inside its shell, thus its slight alcoholic aftertaste. XO durians are typically round or oval and their thorns are pointed inwards at the base of the fruit.",
     pic:
       "https://www.asiaone.com/sites/default/files/inline-images/20200629_durian_the%20straits%20times-4.jpg",
   },
+  {
+    name: "Red Prawn (aka Hong Xia, Ang Hei, Udang Merah)",
+    placeOrigin: "Pahang and Johor.",
+    description:
+      "For sweet durian lovers. The flesh of Red Pawn slightly differs from the others due to its vibrant reddish orange colour. Creamier and stickier than most durians, the taste of this durian depends largely on the age of the tree that it grew from. Younger durian trees yield sweeter fruit, while the more mature trees produce more bitter fruit. Red Prawn durian shells are thick due to the wide core of the durian, so there might not be a lot of fruit.",
+    pic:
+      "https://www.asiaone.com/sites/default/files/inline-images/20200629_durian_the%20straits%20times-5.jpg",
+  },
+  {
+    name: "Black Pearl (aka Hei Zhen Zhu)",
+    placeOrigin: "Johor.",
+    description:
+      "One of the rarer durian species. As its name suggests, Black Pearl durians have small seeds and pale yellow flesh with grey undertones. Featuring a smooth and creamy flesh, it has a bittersweet taste that doesn’t come off as overwhelming. To distinguish it, look out for a small shell with a stubby stem.",
+    pic:
+      "https://www.asiaone.com/sites/default/files/inline-images/20200629_durian_the%20straits%20times-6.jpg",
+  },
+  {
+    name: "Green Bamboo (aka Qing Zhu)",
+    placeOrigin: "Johor.",
+    description:
+      "Another sweet durian. This breed is popular for its buttery and fibrous flesh. When you pry it open, you’ll find a pale yellow, slightly greenish flesh and a trademark orange stem in the middle of the core.",
+    pic:
+      "https://www.asiaone.com/sites/default/files/inline-images/20200629_durian_the%20straits%20times-7.jpg",
+  },
+  {
+    name: "Black Thorn",
+    placeOrigin: "Penang.",
+    description:
+      "The flesh of the Black Thorn is bright yellow and creamy and it has a sweet and custardy taste, similar to that of Mao Shan Wang – but not as rich and has a lighter texture. The tips of the thorns tend to be darker too, thus the name.",
+    pic:
+      "https://www.asiaone.com/sites/default/files/inline-images/20200629_durian_year%20of%20the%20durian.jpg",
+  },
+  {
+    name: "Black Gold",
+    placeOrigin: "Pahang.",
+    description:
+      "A durian breed that’s a few grades higher than the popular Mao Shan Wang. Like Black Pearl durians, dark greyish undertones can be found on the flesh of Black Gold durians. It has a silky texture and an intense buttery, bitter aftertaste.",
+    pic:
+      "https://www.asiaone.com/sites/default/files/inline-images/20200629_durian_burpple.jpg",
+  },
 ];
 
-function TypesHomeScreen({ navigation }) {
+function TypesScreen(screenCount) {
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Different types of durians.</Text>
       <Card style={styles.card}>
         <CardItem cardBody>
           <Image
-            source={{ uri: typesData[0].pic }}
+            source={{ uri: typesData[screenCount].pic }}
             style={{ height: 200, width: null, flex: 1 }}
           />
         </CardItem>
         <CardItem>
           <Body>
-            <Text style={styles.cardTitle}>
-              {typesData[0].name}
-            </Text>
-            <Text>{typesData[0].placeOrigin}</Text>
-            <Text>{typesData[0].description}</Text>
-          </Body>
-        </CardItem>
-      </Card>
-    </View>
-  );
-}
-
-function TypesSecondScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.titleText}>Different types of durians.</Text>
-      <Card style={styles.card}>
-        <CardItem cardBody>
-          <Image
-            source={{ uri: typesData[1].pic }}
-            style={{ height: 200, width: null, flex: 1 }}
-          />
-        </CardItem>
-        <CardItem>
-          <Body>
-            <Text style={styles.cardTitle}>
-              {typesData[1].name}
-            </Text>
-            <Text>{typesData[1].placeOrigin}</Text>
-            <Text>{typesData[1].description}</Text>
-          </Body>
-        </CardItem>
-      </Card>
-    </View>
-  );
-}
-
-function TypesThirdScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.titleText}>Different types of durians.</Text>
-      <Card style={styles.card}>
-        <CardItem cardBody>
-          <Image
-            source={{ uri: typesData[2].pic }}
-            style={{ height: 200, width: null, flex: 1 }}
-          />
-        </CardItem>
-        <CardItem>
-          <Body>
-            <Text style={styles.cardTitle}>
-              {typesData[2].name}
-            </Text>
-            <Text>{typesData[2].placeOrigin}</Text>
-            <Text>{typesData[2].description}</Text>
-          </Body>
-        </CardItem>
-      </Card>
-    </View>
-  );
-}
-
-function TypesForthScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.titleText}>Different types of durians.</Text>
-      <Card style={styles.card}>
-        <CardItem cardBody>
-          <Image
-            source={{ uri: typesData[3].pic }}
-            style={{ height: 200, width: null, flex: 1 }}
-          />
-        </CardItem>
-        <CardItem>
-          <Body>
-            <Text style={styles.cardTitle}>{typesData[3].name}</Text>
-            <Text>{typesData[3].placeOrigin}</Text>
-            <Text>{typesData[3].description}</Text>
+            <Text style={styles.cardTitle}>{typesData[screenCount].name}</Text>
+            <Text style={styles.messageText}>Place of origin</Text>
+            <Text>{typesData[screenCount].placeOrigin}</Text>
+            <Text style={styles.messageText}>Description</Text>
+            <Text>{typesData[screenCount].description}</Text>
           </Body>
         </CardItem>
       </Card>
@@ -141,38 +108,114 @@ const Stack = createStackNavigator();
 export default function EventsStack({ navigation }) {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="TypesHome" component={TypesHomeScreen} options={{
+      <Stack.Screen
+        name="TypesHome"
+        component={() => TypesScreen(0)}
+        options={{
           headerRight: () => (
             <Button
               onPress={() => navigation.navigate("TypesSecond")}
               title="Next Type"
             />
           ),
-        }}/>
-      <Stack.Screen name="TypesSecond" component={TypesSecondScreen} options={{
+        }}
+      />
+      <Stack.Screen
+        name="TypesSecond"
+        component={() => TypesScreen(1)}
+        options={{
           headerRight: () => (
             <Button
               onPress={() => navigation.navigate("TypesThird")}
               title="Next Type"
             />
           ),
-        }}/>
-      <Stack.Screen name="TypesThird" component={TypesThirdScreen} options={{
+        }}
+      />
+      <Stack.Screen
+        name="TypesThird"
+        component={() => TypesScreen(2)}
+        options={{
           headerRight: () => (
             <Button
               onPress={() => navigation.navigate("TypesForth")}
               title="Next Type"
             />
           ),
-        }}/>
-      <Stack.Screen name="TypesForth" component={TypesForthScreen} options={{
+        }}
+      />
+      <Stack.Screen
+        name="TypesForth"
+        component={() => TypesScreen(3)}
+        options={{
+          headerRight: () => (
+            <Button
+              onPress={() => navigation.navigate("TypesFifth")}
+              title="Next Type"
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="TypesFifth"
+        component={() => TypesScreen(4)}
+        options={{
+          headerRight: () => (
+            <Button
+              onPress={() => navigation.navigate("TypesSixth")}
+              title="Next Type"
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="TypesSixth"
+        component={() => TypesScreen(5)}
+        options={{
+          headerRight: () => (
+            <Button
+              onPress={() => navigation.navigate("TypesSeventh")}
+              title="Next Type"
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="TypesSeventh"
+        component={() => TypesScreen(6)}
+        options={{
+          headerRight: () => (
+            <Button
+              onPress={() => navigation.navigate("TypesEight")}
+              title="Next Type"
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="TypesEight"
+        component={() => TypesScreen(7)}
+        options={{
+          headerRight: () => (
+            <Button
+              onPress={() => navigation.navigate("TypesNine")}
+              title="Next Type"
+            />
+          ),
+        }}
+      />
+      <Stack.Screen
+        name="TypesNine"
+        component={() => TypesScreen(8)}
+        options={{
           headerRight: () => (
             <Button
               onPress={() => navigation.navigate("TypesHome")}
               title="Back to Top"
             />
           ),
-        }}/>
+        }}
+      />
     </Stack.Navigator>
   );
 }
@@ -191,5 +234,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: "bold",
     marginBottom: 12,
+  },
+  messageText: {
+    fontWeight: "bold",
   },
 });
