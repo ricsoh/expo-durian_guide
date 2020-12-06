@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Text, View, Button, Image, StyleSheet } from "react-native";
+import { Text, View, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Card, CardItem, Body } from "native-base";
 
+var screenCount = 0;
 const typesData = [
   {
     name: "Mao Shan Wang (aka Butter durian, Cat Mountain King, Rajah Kunyit)",
@@ -78,7 +79,7 @@ const typesData = [
   },
 ];
 
-function TypesScreen(screenCount) {
+function TypesScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Different types of durians.</Text>
@@ -110,109 +111,109 @@ export default function EventsStack({ navigation }) {
     <Stack.Navigator>
       <Stack.Screen
         name="TypesHome"
-        component={() => TypesScreen(0)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 0 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesSecond")}
-              title="Next Type"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesSecond")}>
+              <Text style={styles.buttonText}>NEXT TYPE</Text>
+            </TouchableOpacity>
           ),
         }}
       />
       <Stack.Screen
         name="TypesSecond"
-        component={() => TypesScreen(1)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 1 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesThird")}
-              title="Next Type"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesThird")}>
+              <Text style={styles.buttonText}>NEXT TYPE</Text>
+            </TouchableOpacity>
           ),
         }}
       />
       <Stack.Screen
         name="TypesThird"
-        component={() => TypesScreen(2)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 2 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesForth")}
-              title="Next Type"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesForth")}>
+              <Text style={styles.buttonText}>NEXT TYPE</Text>
+            </TouchableOpacity>
           ),
         }}
       />
       <Stack.Screen
         name="TypesForth"
-        component={() => TypesScreen(3)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 3 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesFifth")}
-              title="Next Type"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesFifth")}>
+              <Text style={styles.buttonText}>NEXT TYPE</Text>
+            </TouchableOpacity>
           ),
         }}
       />
       <Stack.Screen
         name="TypesFifth"
-        component={() => TypesScreen(4)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 4 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesSixth")}
-              title="Next Type"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesSixth")}>
+              <Text style={styles.buttonText}>NEXT TYPE</Text>
+            </TouchableOpacity>
           ),
         }}
       />
       <Stack.Screen
         name="TypesSixth"
-        component={() => TypesScreen(5)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 5 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesSeventh")}
-              title="Next Type"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesSeventh")}>
+              <Text style={styles.buttonText}>NEXT TYPE</Text>
+            </TouchableOpacity>
           ),
         }}
       />
       <Stack.Screen
         name="TypesSeventh"
-        component={() => TypesScreen(6)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 6 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesEight")}
-              title="Next Type"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesEight")}>
+              <Text style={styles.buttonText}>NEXT TYPE</Text>
+            </TouchableOpacity>
           ),
         }}
       />
       <Stack.Screen
         name="TypesEight"
-        component={() => TypesScreen(7)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 7 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesNine")}
-              title="Next Type"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesNine")}>
+              <Text style={styles.buttonText}>NEXT TYPE</Text>
+            </TouchableOpacity>
           ),
         }}
       />
       <Stack.Screen
         name="TypesNine"
-        component={() => TypesScreen(8)}
+        component={TypesScreen}
+        initialParams={{ screenCount: 8 }}
         options={{
           headerRight: () => (
-            <Button
-              onPress={() => navigation.navigate("TypesHome")}
-              title="Back to Top"
-            />
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesHome")}>
+              <Text style={styles.buttonText}>BACK TO TOP</Text>
+            </TouchableOpacity>
           ),
         }}
       />
@@ -238,4 +239,15 @@ const styles = StyleSheet.create({
   messageText: {
     fontWeight: "bold",
   },
+  button: {
+    backgroundColor: '#2196F3',
+    padding: 8,
+    borderRadius: 10,
+    marginRight: 15,
+  },
+  buttonText: {
+    fontSize: 12,
+    textAlign: 'center',
+    color: 'white',
+  }, 
 });
