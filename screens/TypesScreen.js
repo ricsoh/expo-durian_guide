@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, View, Image, TouchableOpacity, StyleSheet } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Card, CardItem, Body } from "native-base";
+import { roundToNearestPixel } from 'react-native/Libraries/Utilities/PixelRatio';
 
 const typesData = [
   {
@@ -78,24 +79,26 @@ const typesData = [
   },
 ];
 
-function TypesScreen(screenCount) {
+function TypesScreen({ route }) {
+  const { name, placeOrigin, description, pic } = route.params;
+
   return (
     <View style={styles.container}>
       <Text style={styles.titleText}>Different types of durians.</Text>
       <Card style={styles.card}>
         <CardItem cardBody>
           <Image
-            source={{ uri: typesData[screenCount].pic }}
+            source={{ uri: pic}}
             style={{ height: 200, width: null, flex: 1 }}
           />
         </CardItem>
         <CardItem>
           <Body>
-            <Text style={styles.cardTitle}>{typesData[screenCount].name}</Text>
+            <Text style={styles.cardTitle}>{name}</Text>
             <Text style={styles.messageText}>Place of origin</Text>
-            <Text>{typesData[screenCount].placeOrigin}</Text>
+            <Text>{placeOrigin}</Text>
             <Text style={styles.messageText}>Description</Text>
-            <Text>{typesData[screenCount].description}</Text>
+            <Text>{description}</Text>
           </Body>
         </CardItem>
       </Card>
@@ -110,7 +113,8 @@ export default function EventsStack({ navigation }) {
     <Stack.Navigator>
       <Stack.Screen
         name="TypesHome"
-        component={() => TypesScreen(0)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[0] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesSecond")}>
@@ -121,7 +125,8 @@ export default function EventsStack({ navigation }) {
       />
       <Stack.Screen
         name="TypesSecond"
-        component={() => TypesScreen(1)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[1] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesThird")}>
@@ -132,7 +137,8 @@ export default function EventsStack({ navigation }) {
       />
       <Stack.Screen
         name="TypesThird"
-        component={() => TypesScreen(2)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[2] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesForth")}>
@@ -143,7 +149,8 @@ export default function EventsStack({ navigation }) {
       />
       <Stack.Screen
         name="TypesForth"
-        component={() => TypesScreen(3)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[3] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesFifth")}>
@@ -154,7 +161,8 @@ export default function EventsStack({ navigation }) {
       />
       <Stack.Screen
         name="TypesFifth"
-        component={() => TypesScreen(4)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[4] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesSixth")}>
@@ -165,7 +173,8 @@ export default function EventsStack({ navigation }) {
       />
       <Stack.Screen
         name="TypesSixth"
-        component={() => TypesScreen(5)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[5] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesSeventh")}>
@@ -176,7 +185,8 @@ export default function EventsStack({ navigation }) {
       />
       <Stack.Screen
         name="TypesSeventh"
-        component={() => TypesScreen(6)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[6] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesEight")}>
@@ -187,7 +197,8 @@ export default function EventsStack({ navigation }) {
       />
       <Stack.Screen
         name="TypesEight"
-        component={() => TypesScreen(7)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[7] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesNine")}>
@@ -198,7 +209,8 @@ export default function EventsStack({ navigation }) {
       />
       <Stack.Screen
         name="TypesNine"
-        component={() => TypesScreen(8)}
+        component={TypesScreen}
+        initialParams={{ ...typesData[8] }}
         options={{
           headerRight: () => (
             <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("TypesHome")}>
